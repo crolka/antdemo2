@@ -8,17 +8,11 @@ Add your content here.
 = Details =
 
 = Ant =
-<ul>
-<li><a href="http://ant.apache.org/manual/">Apache Manual</a></li>
-</ul>
+ * http://ant.apache.org/manual/
 = Subversion =
-<ul>
-<li><a href="http://subversion.tigris.org/">Subversion website</a></li>
-</ul>
+ * http://subversion.tigris.org/
 = Java =
-<ul>
-<li><a href="http://java.sun.com/javase/6/docs/api/">Java Documentation</a></li>
-</ul>
+ * http://java.sun.com/javase/6/docs/api/
 = Eclipse =
  * http://www.eclipse.org
 
