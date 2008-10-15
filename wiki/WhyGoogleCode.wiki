@@ -1,0 +1,30 @@
+#summary Why do we use Google Code for web-based project management...
+#labels Featured
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+We looked at:
+
+* Freepository
+  - This website had some good features similar to GoogleCode but all the features that we needed were not available in free version.
+
+* Sourceforge
+  - Not user friendly.
+
+* OW2Consortium
+  - Not enough information available.
+
+* TuxFamily
+  - doesn't support SVN (only for CVS)
+
+* Launchpad
+  - not suiting our requirements.
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
