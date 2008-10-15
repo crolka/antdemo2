@@ -12,7 +12,7 @@ We looked at:
 * Freepository
   - This website had some good features similar to GoogleCode but all the features that we needed were not available in free version.
 
-* Sourceforge
+* SourceForge
   - Not user friendly.
 
 * OW2Consortium
