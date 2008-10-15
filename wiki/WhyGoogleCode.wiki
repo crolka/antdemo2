@@ -10,21 +10,16 @@ Add your content here.
 We looked at:
 
 * Freepository
-  - This website had some good features similar to GoogleCode but all the features that we needed were not available in free version.
+  This website had some good features similar to GoogleCode but all the features that we needed were not available in free version.
 
 * SourceForge
-  - Not user friendly.
+  Not user friendly.
 
 * OW2Consortium
-  - Not enough information available.
+  Not enough information available.
 
 * TuxFamily
-  - doesn't support SVN (only for CVS)
+  doesn't support SVN (only for CVS)
 
 * Launchpad
-  - not suiting our requirements.
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  Not suiting our requirements.
