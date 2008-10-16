@@ -2,7 +2,7 @@
 #labels Featured
 = Introduction =
 
-Of all the web-based project management systems that we looked at, GoogleCode seemed the most appropriate.  There is no tiered membership, ads to content with, or a philosophy or mission to adhere to.  
+Of all the web-based project management systems that we looked at, GoogleCode seemed the most appropriate.  There is no tiered membership, ads to content with, or a philosophy or mission to which to adhere.  
 
 = Details =
 
