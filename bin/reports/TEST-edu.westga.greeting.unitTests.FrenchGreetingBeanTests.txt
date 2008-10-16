@@ -1,0 +1,4 @@
+Testsuite: edu.westga.greeting.unitTests.FrenchGreetingBeanTests
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.078 sec
+
+Testcase: shouldGetFrenchGreeting took 0.016 sec
