@@ -2,8 +2,7 @@
 #labels Featured
 = Introduction =
 
-This is a summary of why we chose Google Code for our web-based project management system.
-
+Of all the web-based project management systems that we looked at, GoogleCode seemed the most appropriate.  There is no tiered membership, ads to content with, or a philosophy or mission to adhere to.  
 
 = Details =
 
