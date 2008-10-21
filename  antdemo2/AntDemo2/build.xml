@@ -1,0 +1,115 @@
+<!--<project name="AntDemo2" default="all" >
+    
+    <target name="init"   
+            description="Decleare and initialize properties.">
+    	<property name="bin" value="./bin"/>
+    </target>
+
+    <target name="clean" depends="init" 
+            description="Delete the output directories and jar.">
+    	<delete dir = "${bin}"/>  	
+        
+    </target>
+    
+    <target name="prepare" depends="init" 
+            description="Create the output directories anew.">
+    
+        <mkdir dir = "./bin"/>
+    </target>
+
+    <target name="compile" depends="prepare" 
+            description="Compile the model source.">    	
+	<javac srcdir="./src/edu/westga/greeting/model"  destdir="./bin"/>
+        
+    </target>
+	
+	<target name="compile-tests" depends="compile" 
+	            description="Compile the unit test source.">
+		<javac srcdir="./src/edu/westga/greeting/unitTests"  destdir="./bin"/>		
+		 
+	</target>
+	
+	<target name="test" depends="compile-tests"
+		    description="Run unit tests with brief report to console,
+		 				 plain report to text file.">
+		
+		
+	  </target>
+
+    <target name="package" depends="test"
+            description="Compress the compiled model classes into a jar.">
+    	
+    	<mkdir dir="./jarfile"/>
+    	
+    	<jar jarfile="Project.jar" basedir="./bin"></jar>
+    </target>
+    
+    <target name="all" depends="clean,package" 
+            description="Perform all targets."/> 
+
+</project>-->
+
+<project name="AntDemo2" default="all" >
+   
+    <target name="init" description="Decleare and initialize properties.">
+        <property name="binDir"         value="./bin"/>
+        <property name="srcDir"         value="./src/edu/westga/greeting"/>
+        <property name="eduDir"         value="edu"/>
+     </target>
+
+    <target name="clean" depends="init" description="Delete the output directories and jar.">
+        <delete dir="${binDir}"/>
+    </target>
+   
+    <target name="prepare" depends="init" description="Create the output directories anew.">
+        <mkdir dir="${binDir}"/>
+        <mkdir dir="${binDir}/jarFiles"/>
+        <mkdir dir="${binDir}/reports"/>
+    </target>
+
+    <target name="compile" depends="prepare" description="Compile the model source.">
+        <javac srcdir="${srcDir}/model" destdir="${binDir}" />          
+    </target>
+       
+        <target name="compile-tests" depends="compile" description="Compile the unit test source.">
+        <javac srcdir="${srcDir}/unitTests" destdir="${binDir}" />
+        </target>
+       
+        <target name="test" depends="compile-tests" description="Run unit tests with brief report to console, plain report to text file.">
+                <junit haltonfailure="true">
+                        <classpath path="${binDir}" />
+                        <formatter type="brief" usefile="false" />
+                        <formatter type="plain" />
+                       
+                        <batchtest fork="yes" todir="${binDir}/reports">
+                                <fileset dir="${binDir}" includes="**/*Tests.class" />
+                        </batchtest>
+                </junit>
+        </target>
+
+   <!-- <target name="package" depends="test" description="Compress the compiled model classes into a jar.">
+        <jar destfile="${binDir}/jarFiles/${ant.project.name}.jar" basedir="${binDir}"></jar>
+    	 <manifest>
+    	       <attribute name="Main-Class" value="edu.westga.greeting.application.GreetingApp"/>
+    	 </manifest>   	
+
+    </target>-->	
+	<target name="package" depends="compile-tests" description="Compress the compiled model classes into a jar.">	
+		<jar jarfile="${binDir}/jarFiles/${ant.project.name}.jar" manifest="./Manifest.mf">		
+		<fileset dir="${binDir}" includes="**/*.class"/>
+	</jar>
+	</target>
+	
+	<target name="run" depends="package" description="Executes the jar file.">
+		 <java jar ="${binDir}/jarFiles/${ant.project.name}.jar"
+		          fork="true"/>	        
+	    </target>   
+    <target name="all" depends="clean,run" description="Perform all targets."/>
+	
+	 <target name="main" depends="clean,run"/>
+
+
+</project>
+
+
+
