@@ -1,5 +1,3 @@
-
-
 <project name="AntDemo2" default="all" >
    
     <target name="init" description="Decleare and initialize properties.">
@@ -26,19 +24,33 @@
         <javac srcdir="${srcDir}/unitTests" destdir="${binDir}" />
         </target>
        
-        <target name="test" depends="compile-tests" description="Run unit tests with brief report to console, plain report to text file.">
-                <junit haltonfailure="true">
-                        <classpath path="${binDir}" />
-                        <formatter type="brief" usefile="false" />
-                        <formatter type="plain" />
-                       
-                        <batchtest fork="yes" todir="${binDir}/reports">
-                                <fileset dir="${binDir}" includes="**/*Tests.class" />
-                        </batchtest>
-                </junit>
-        </target>
+	
+		<target name="test" depends="compile-tests" description="Run unit tests with brief report to console, plain report to text file.">
+		<junit haltonfailure="true"> 
+			<classpath path="${binDir}" /> 
+			<formatter type="brief" usefile="false" /> 
+			<formatter type="plain" /> 
+			<formatter type="xml"/>
+			<batchtest fork="yes" todir="${binDir}/reports/"> 
+				<fileset dir="${binDir}" includes="**/*Tests.class" /> 
+			</batchtest> 
+		</junit> 
+		
+		<junitreport todir="${binDir}/reports/">
+				  <fileset dir="${binDir}/reports/">
+				    <include name="TEST-*.xml"/>
+				  </fileset>
+				  <report format="frames" todir="${binDir}/reports/html"/>
+				</junitreport>
+	</target>  
 
- 	
+   <!-- <target name="package" depends="test" description="Compress the compiled model classes into a jar.">
+        <jar destfile="${binDir}/jarFiles/${ant.project.name}.jar" basedir="${binDir}"></jar>
+    	 <manifest>
+    	       <attribute name="Main-Class" value="edu.westga.greeting.application.GreetingApp"/>
+    	 </manifest>   	
+
+    </target>-->	
 	<target name="package" depends="compile-tests" description="Compress the compiled model classes into a jar.">	
 		<jar jarfile="${binDir}/jarFiles/${ant.project.name}.jar" manifest="./Manifest.mf">		
 		<fileset dir="${binDir}" includes="**/*.class"/>
