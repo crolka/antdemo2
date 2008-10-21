@@ -44,13 +44,7 @@
 				</junitreport>
 	</target>  
 
-   <!-- <target name="package" depends="test" description="Compress the compiled model classes into a jar.">
-        <jar destfile="${binDir}/jarFiles/${ant.project.name}.jar" basedir="${binDir}"></jar>
-    	 <manifest>
-    	       <attribute name="Main-Class" value="edu.westga.greeting.application.GreetingApp"/>
-    	 </manifest>   	
 
-    </target>-->	
 	<target name="package" depends="compile-tests" description="Compress the compiled model classes into a jar.">	
 		<jar jarfile="${binDir}/jarFiles/${ant.project.name}.jar" manifest="./Manifest.mf">		
 		<fileset dir="${binDir}" includes="**/*.class"/>
