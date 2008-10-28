@@ -22,7 +22,7 @@ public class GermanGreetingBean implements IGreeting {
 		
 		if (hour > 16){
 			timeDay = " Abend";
-		} else if (hour <= 12){
+		} else if (hour < 12){
 			timeDay = " Morgen";
 		}
 		
