@@ -14,7 +14,7 @@ public class SpanishGreetingBean {
 		int hour = myCal.get(Calendar.HOUR_OF_DAY);
 		String timeDay = "Buenos Dias";
 		
-		if (hour > 18){
+		if (hour >= 18){
 			timeDay = "Buenas noches";
 		} else if ((hour >= 12) && (hour < 18)){
 			timeDay = "Buenas Tardes";
